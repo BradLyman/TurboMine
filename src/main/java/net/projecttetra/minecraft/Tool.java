@@ -4,8 +4,8 @@ import lombok.NonNull;
 import lombok.Value;
 
 /**
- * Objects of this class represent a tool which activates based on the item
- * in the player's offhand.
+ * Objects of this class represent a tool which activates based on the actual
+ * name of an item.
  */
 @Value
 public final class Tool {
@@ -14,12 +14,19 @@ public final class Tool {
         String display();
     }
 
-    @NonNull String expected;
-    @NonNull Runnable behavior;
+    public interface Volume {
+        void breakAllAt(final Block block);
+    }
 
-    public void breakBlock(final Name actual) {
+    @NonNull String expected;
+    @NonNull Volume volume;
+
+    /**
+     * Break a block using a named item.
+     */
+    public void breakBlocksWith(final Block block, final Name actual) {
         if (expected.equals(actual.display())) {
-            behavior.run();
+            volume.breakAllAt(block);
         }
     }
 }

@@ -14,11 +14,13 @@ public class DrillListener implements Listener
     private final Tool drill =
         new Tool(
             "drill",
-            () -> { System.out.println("drill applied"); }
+            (block) -> {
+                System.out.println("drill activated");
+            }
         );
 
     @EventHandler
     public void breakBlock(final BlockBreakEvent event) {
-        drill.breakBlock(new OffHandItemName(event));
+        drill.breakBlocksWith(null, new OffHandItemName(event));
     }
 }
