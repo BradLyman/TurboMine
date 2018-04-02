@@ -8,8 +8,8 @@ import lombok.Value;
 /**
  * Objects of this type represent a 3-dimensional vector.
  */
-public interface Vector {
-
+public interface Vector
+{
     double x();
     double y();
     double z();
@@ -20,11 +20,16 @@ public interface Vector {
     @Value
     @Getter(AccessLevel.NONE)
     @RequiredArgsConstructor
-    public final class Const implements Vector {
-
+    public final class Const implements Vector
+    {
         double x;
         double y;
         double z;
+
+        public Const(final Vector v)
+        {
+            this(v.x(), v.y(), v.z());
+        }
 
         @Override
         public double x() { return x; }
