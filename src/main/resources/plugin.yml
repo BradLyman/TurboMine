@@ -1,0 +1,5 @@
+name: TurboMine
+version: 0.1
+description: additional mining tools for spigot mc
+
+main: net.projecttetra.minecraft.spigot.TurboMine
