@@ -8,18 +8,18 @@ import lombok.Value;
  * in the player's offhand.
  */
 @Value
-public final class OffhandTool {
+public final class Tool {
 
     public interface Name {
         String display();
     }
 
     @NonNull String expected;
-    @NonNull Runnable tool;
+    @NonNull Runnable behavior;
 
-    public void breakBlock(final Name offhand) {
-        if (expected.equals(offhand.display())) {
-            tool.run();
+    public void breakBlock(final Name actual) {
+        if (expected.equals(actual.display())) {
+            behavior.run();
         }
     }
 }

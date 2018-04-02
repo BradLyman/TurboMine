@@ -5,14 +5,14 @@ import lombok.NonNull;
 import lombok.Value;
 import org.bukkit.event.block.BlockBreakEvent;
 
-import net.projecttetra.minecraft.OffhandTool;
+import net.projecttetra.minecraft.Tool;
 
 /**
  * Objects of this class represent the name of the item in the player's offhand
  * at the time a block is broken.
  */
 @Value
-public final class OffHandItemName implements OffhandTool.Name {
+public final class OffHandItemName implements Tool.Name {
 
     @NonNull BlockBreakEvent event;
 
