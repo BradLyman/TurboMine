@@ -1,4 +1,4 @@
-package net.projecttetra.minecraft.spigot;
+package net.projecttetra.minecraft.spigot.plugin;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -9,6 +9,9 @@ import net.projecttetra.minecraft.Block;
 import net.projecttetra.minecraft.SquareVolume;
 import net.projecttetra.minecraft.Tool;
 import net.projecttetra.minecraft.ViewSpaceBlock;
+import net.projecttetra.minecraft.spigot.OffHandItemName;
+import net.projecttetra.minecraft.spigot.PlayerViewAsVec;
+import net.projecttetra.minecraft.spigot.WorldBlock;
 
 /**
  * Objects of this class represent the Spigot-Native listener which activates

@@ -1,4 +1,4 @@
-package net.projecttetra.minecraft.spigot;
+package net.projecttetra.minecraft.spigot.plugin;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
