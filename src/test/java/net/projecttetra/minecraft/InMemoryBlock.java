@@ -4,7 +4,7 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.Value;
 import net.projecttetra.minecraft.linalg.Vector;
-import net.projecttetra.minecraft.linalg.Sum;
+import net.projecttetra.minecraft.linalg.vector.Sum;
 
 /**
  * Objects of this class represent a block which has all metadata stored in an

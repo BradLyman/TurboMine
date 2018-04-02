@@ -39,5 +39,11 @@ public interface Vector
 
         @Override
         public double z() { return z; }
+
+        @Override
+        public String toString()
+        {
+            return "<" + x() + ", " + y() + ", " + z() + ">";
+        }
     }
 }

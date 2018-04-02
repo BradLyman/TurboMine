@@ -1,4 +1,6 @@
-package net.projecttetra.minecraft.linalg;
+package net.projecttetra.minecraft.linalg.vector;
+
+import net.projecttetra.minecraft.linalg.Vector;
 
 /**
  * Objects of this class represent the sum of two vectors.
@@ -15,17 +17,20 @@ public final class Sum implements Vector
     }
 
     @Override
-    public double x() {
+    public double x()
+    {
         return a.x() + b.x();
     }
 
     @Override
-    public double y() {
+    public double y()
+    {
         return a.y() + b.y();
     }
 
     @Override
-    public double z() {
+    public double z()
+    {
         return a.z() + b.z();
     }
 }
