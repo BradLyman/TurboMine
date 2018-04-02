@@ -5,6 +5,7 @@ import lombok.NonNull;
 import lombok.Value;
 import net.projecttetra.minecraft.linalg.Matrix;
 import net.projecttetra.minecraft.linalg.Vector;
+import net.projecttetra.minecraft.linalg.vector.Components;
 
 /**
  * Objects of this class represent a change-of-basis for a vector space.
@@ -16,6 +17,20 @@ public class Basis implements Matrix
     @NonNull Vector i;
     @NonNull Vector j;
     @NonNull Vector k;
+
+    public Basis(final Components components)
+    {
+        this(components.aligned());
+    }
+
+    public Basis(final Vector[] components)
+    {
+        this(
+            components[0],
+            components[1],
+            components[2]
+        );
+    }
 
     @Override
     public Vector transform(final Vector v)

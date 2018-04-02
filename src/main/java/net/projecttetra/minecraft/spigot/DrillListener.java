@@ -8,6 +8,7 @@ import java.util.Optional;
 import net.projecttetra.minecraft.Block;
 import net.projecttetra.minecraft.SquareVolume;
 import net.projecttetra.minecraft.Tool;
+import net.projecttetra.minecraft.ViewSpaceBlock;
 
 /**
  * Objects of this class represent the Spigot-Native listener which activates
@@ -24,12 +25,15 @@ public class DrillListener implements Listener
     @EventHandler
     public void breakBlock(final BlockBreakEvent event) {
         final Block center =
-            new WorldBlock(
-                event.getBlock().getWorld(),
-                event.getBlock(),
-                mainItem(event)
+            new ViewSpaceBlock(
+                new WorldBlock(
+                    event.getBlock().getWorld(),
+                    event.getBlock(),
+                    mainItem(event)
+                ),
+                new PlayerViewAsVec(event)
             );
-
+        event.getBlock();
         drill.breakBlocksWith(center, new OffHandItemName(event));
     }
 

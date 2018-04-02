@@ -15,10 +15,7 @@ public final class Unit implements Vector
 
     public Unit(final Vector v)
     {
-        this(
-            Math.sqrt(v.x()*v.x() + v.y()*v.y() + v.z()*v.z()),
-            v
-        );
+        this(magnitude(v), v);
     }
 
     @Override
@@ -37,5 +34,15 @@ public final class Unit implements Vector
     public double z()
     {
         return vector.z() / length;
+    }
+
+    private static double magnitude(final Vector v)
+    {
+        final double val = Math.sqrt(v.x()*v.x() + v.y()*v.y() + v.z()*v.z());
+        if (val == 0)
+        {
+            return 1.0;
+        }
+        return val;
     }
 }

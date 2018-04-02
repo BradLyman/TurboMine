@@ -24,6 +24,7 @@ public class WorldBlock implements Block {
     @Override
     public void breakThis() {
         if (breakWith.isPresent()) {
+            System.out.println("break block with tool");
             nmsBlock.breakNaturally(breakWith.get());
         }
         else {
