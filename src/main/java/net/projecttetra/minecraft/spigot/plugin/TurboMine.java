@@ -11,6 +11,10 @@ public class TurboMine extends JavaPlugin
         this.getServer()
             .getPluginManager()
             .registerEvents(new DrillListener(), this);
+
+        this.getServer()
+            .getPluginManager()
+            .registerEvents(new VeinListener(), this);
     }
 
     @Override
